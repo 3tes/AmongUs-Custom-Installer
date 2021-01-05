@@ -4,20 +4,24 @@ from colorama import Fore, Style
 from clint.textui import progress
 
 
+CREWLINKSERVER = "https://amongusvoice.ga:8000/"
+AMONGUSSERVER = "194.124.41.128"
+AMONGUSSERVERNAME = "UGD Server"
+
 def change_conf(cf):
     config_path = os.environ["APPDATA"] + f"\\{cf}\\"
 
     rfile = open(config_path+"config.json", "r")
     js = json.loads(rfile.read())
     rfile.close()
-    js["serverURL"] = "https://amongusvoice.ga:8000/"
+    js["serverURL"] = CREWLINKSERVER
     wfile = open(config_path+"config.json", "w")
     wfile.writelines(json.dumps(js))
     wfile.close()
 
 def w_region():
     path = os.environ["APPDATA"] + "\\..\\LocalLow\\Innersloth\\Among Us\\"
-    write_regionInfo.write_file("UGD Server", "194.124.41.128")
+    write_regionInfo.write_file(AMONGUSSERVERNAME, AMONGUSSERVER)
     os.replace("regionInfo.dat", path + "regionInfo.dat")
 
 def check_crewlink():
