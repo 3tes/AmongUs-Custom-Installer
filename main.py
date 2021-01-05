@@ -4,9 +4,9 @@ from colorama import Fore, Style
 from clint.textui import progress
 
 
-CREWLINKSERVER = "https://amongusvoice.ga:8000/"
-AMONGUSSERVER = "194.124.41.128"
-AMONGUSSERVERNAME = "UGD Server"
+CREWLINKSERVER = "https://crew.ink"
+AMONGUSSERVER = "1.1.1.1"
+AMONGUSSERVERNAME = "Test Server"
 
 def change_conf(cf):
     config_path = os.environ["APPDATA"] + f"\\{cf}\\"

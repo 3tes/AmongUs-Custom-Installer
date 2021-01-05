@@ -8,3 +8,4 @@ build/main/base_library.zip
 build/main/warn-main.txt
 build/main/xref-main.html
 *.spec
+server.txt
