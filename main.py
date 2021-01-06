@@ -7,7 +7,7 @@ from clint.textui import progress
 CREWLINKSERVER = "https://crew.ink"
 AMONGUSSERVER = "1.1.1.1"
 AMONGUSSERVERNAME = "Test Server"
-
+# Write server config for crewlink
 def change_conf(cf):
     config_path = os.environ["APPDATA"] + f"\\{cf}\\"
 
@@ -18,19 +18,19 @@ def change_conf(cf):
     wfile = open(config_path+"config.json", "w")
     wfile.writelines(json.dumps(js))
     wfile.close()
-
+# Write region/server Info for amongus
 def w_region():
     path = os.environ["APPDATA"] + "\\..\\LocalLow\\Innersloth\\Among Us\\"
     write_regionInfo.write_file(AMONGUSSERVERNAME, AMONGUSSERVER)
     os.replace("regionInfo.dat", path + "regionInfo.dat")
-
+# Checks for instalation of Crewlink
 def check_crewlink():
     b_path = os.environ["APPDATA"] + "\\..\\Local\\Programs\\bettercrewlink"
     b_t = os.path.isdir(b_path)
     c_path = os.environ["APPDATA"] + "\\..\\Local\\Programs\\crewlink"
     c_t = os.path.isdir(c_path)
     return {"c": c_t, "b": b_t}
-
+# Downloads file
 def download(url, path, name):
     print("Downloading: " + name)
     r = requests.get(url, stream=True)
@@ -41,7 +41,7 @@ def download(url, path, name):
                 f.write(chunk)
                 f.flush()
     print("Done")
-
+# Installs Crewlink
 def install(what):
     if what == "b":
         if os.path.isfile("BetterCrewlinkInstaller.exe") == False:
@@ -63,7 +63,7 @@ def install(what):
         print("Done")
         
 
-
+# Main function with all the "user interface"
 def start():
     print("Checking for Crewlink:")
     sc = check_crewlink()
