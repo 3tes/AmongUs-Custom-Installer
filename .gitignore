@@ -4,8 +4,6 @@ __pycache__/main.cpython-39.pyc
 *.pkg
 *.pyz
 *.manifest
-build/main/base_library.zip
-build/main/warn-main.txt
-build/main/xref-main.html
+build/*
 *.spec
 server.txt
