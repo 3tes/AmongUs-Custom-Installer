@@ -1,4 +1,5 @@
 from sys import argv
+# Code from https://github.com/alvesvaren/among-us-region-info-py
 
 # Currently the only possible value when using the impostor custom server
 SERVER_SUFFIX = "-Master-1"
